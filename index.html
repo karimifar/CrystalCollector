@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Game 2</title>
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="Assets/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="Assets/js/TimelineMax.min.js"></script>
+    <script src="Assets/js/TweenMax.min.js"></script>
+    <script src="Assets/js/EasePack.min.js"></script>
+    
+    
+  </head>
+
+  <style type="text/css">
+    .st0{clip-path:url(#SVGID_2_);fill:#F1603B;}
+    .st1{clip-path:url(#SVGID_2_);fill:#F79660;}
+    .st2{fill:#FDB833;}
+    .st3{fill:#FFCE4A;}
+    .st4{fill:#FDDD85;}
+    .st5{fill:#ECF8FD;}
+    .st6{fill:#CBEBF7;}
+    .st7{fill:#ACE0F3;}
+    .st8{fill:#7ED2EF;}
+    .st9{fill:#65B9DC;}
+    .st10{fill:#FFFFFF;}
+    .st11{fill:#00A850;}
+    .st12{fill:#00AC55;}
+    .st13{fill:#4FBC88;}
+    .st14{fill:#B4DEC7;}
+    .st15{fill:#F1764F;}
+    .st16{fill:#F06539;}
+    .st17{fill:#ED430D;}
+    .st18{fill:#D83D0C;}
+    .st19{fill:#F38765;}
+   </style>
+
+  
+  <body>
+
+
+    <div id="wrapper">
+      <div id="controls">
+        <div class="start">
+            <button class="btn start-btn" id="start-btn">Start</button>
+        </div>
+        <div id="stats">
+              <p>Score: <span id="wins"></span></p>
+              <p>Losses: <span id="losses"></span></p>
+
+        </div>
+      </div>
+
+      <div id="board">
+          <div id="target">
+            <p><span id="target-number"></span></p> 
+          </div>
+          <div id="user">
+              <p><span id="user-number"></span></p>
+          </div>
+      </div>
+
+      <div id="buttons">
+        <button class="btn crystal-btn" id="crystal1">  
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 90 90" style="enable-background:new 0 0 73.3 92.5;" xml:space="preserve">
+        
+            <g>
+                <path class="st0" d="M53.5,77.1c-0.1,0-0.2,0-0.4,0C52.5,77,52,76.6,51.7,76l-4.3-10.5c-0.3-0.7-0.1-1.5,0.4-2.1l5.9-5.9
+                c0.5-0.5,1.4-0.7,2.1-0.4l10.5,4.3c0.6,0.2,1,0.8,1.1,1.4c0.1,0.6-0.1,1.3-0.5,1.7l-12,12C54.4,76.9,54,77.1,53.5,77.1L53.5,77.1z
+                "/>
+              <path class="st1" d="M36.5,77.1c-0.5,0-1-0.2-1.3-0.6l-12-12c-0.4-0.4-0.6-1.1-0.5-1.7c0.1-0.6,0.5-1.1,1.1-1.4l10.5-4.3
+                c0.7-0.3,1.5-0.1,2.1,0.4l5.9,5.9c0.5,0.5,0.7,1.4,0.4,2.1L38.3,76c-0.2,0.6-0.8,1-1.4,1.1C36.8,77.1,36.7,77.1,36.5,77.1
+                L36.5,77.1z"/>
+              <path class="st1" d="M35,33c-0.2,0-0.5,0-0.7-0.1l-10.5-4.3c-0.6-0.2-1-0.8-1.1-1.4c-0.1-0.6,0.1-1.3,0.5-1.7l12-12
+                c0.4-0.4,1.1-0.6,1.7-0.5c0.6,0.1,1.1,0.5,1.4,1.1l4.3,10.5c0.3,0.7,0.1,1.5-0.4,2.1l-5.9,5.9C36,32.8,35.5,33,35,33L35,33z"/>
+              <path class="st0" d="M55,33c-0.5,0-1-0.2-1.3-0.6l-5.9-5.9c-0.5-0.5-0.7-1.4-0.4-2.1L51.7,14c0.2-0.6,0.8-1,1.4-1.1
+                c0.6-0.1,1.3,0.1,1.7,0.5l12,12c0.4,0.4,0.6,1.1,0.5,1.7c-0.1,0.6-0.5,1.1-1.1,1.4l-10.5,4.3C55.5,32.9,55.2,33,55,33L55,33z"/>
+            </g>
+            <path class="st2" d="M65.4,65.2c-0.2,0-0.5,0-0.7-0.1l-10.5-4.3c-0.7-0.3-1.2-1-1.2-1.7V31.1c0-0.8,0.5-1.5,1.2-1.7L64.7,25
+              c0.6-0.2,1.3-0.2,1.8,0.2c0.5,0.4,0.8,0.9,0.8,1.6v36.5c0,0.6-0.3,1.2-0.8,1.6C66.2,65.1,65.8,65.2,65.4,65.2L65.4,65.2z"/>
+            <path class="st3" d="M53.5,77.1H36.5c-0.6,0-1.2-0.3-1.6-0.8c-0.4-0.5-0.4-1.2-0.2-1.8l4.3-10.5c0.3-0.7,1-1.2,1.7-1.2h8.3
+              c0.8,0,1.5,0.5,1.7,1.2l4.3,10.5c0.2,0.6,0.2,1.3-0.2,1.8C54.7,76.8,54.1,77.1,53.5,77.1L53.5,77.1z"/>
+            <path class="st3" d="M24.6,65.2c-0.4,0-0.7-0.1-1.1-0.3c-0.5-0.4-0.8-0.9-0.8-1.6V26.7c0-0.6,0.3-1.2,0.8-1.6
+              c0.5-0.4,1.2-0.4,1.8-0.2l10.5,4.3c0.7,0.3,1.2,1,1.2,1.7v27.9c0,0.8-0.5,1.5-1.2,1.7L25.3,65C25,65.1,24.8,65.2,24.6,65.2
+              L24.6,65.2z"/>
+            <path class="st3" d="M49.1,27.1h-8.3c-0.8,0-1.5-0.5-1.7-1.2l-4.3-10.5c-0.2-0.6-0.2-1.3,0.2-1.8c0.4-0.5,0.9-0.8,1.6-0.8h16.9
+              c0.6,0,1.2,0.3,1.6,0.8c0.4,0.5,0.4,1.2,0.2,1.8l-4.3,10.5C50.6,26.6,49.9,27.1,49.1,27.1L49.1,27.1z"/>
+            <path class="st4" d="M49.1,66.7h-8.3c-0.5,0-1-0.2-1.3-0.6l-5.9-5.9c-0.4-0.4-0.6-0.8-0.6-1.3V31.1c0-0.5,0.2-1,0.6-1.3l5.9-5.9
+              c0.4-0.4,0.8-0.6,1.3-0.6h8.3c0.5,0,1,0.2,1.3,0.6l5.9,5.9c0.4,0.4,0.6,0.8,0.6,1.3v27.9c0,0.5-0.2,1-0.6,1.3l-5.9,5.9
+              C50.1,66.5,49.6,66.7,49.1,66.7L49.1,66.7z"/>
+            <path class="st2" d="M53.5,12.9H45v14.2h4.1c0.8,0,1.5-0.5,1.7-1.2l4.3-10.5c0.2-0.6,0.2-1.3-0.2-1.8
+              C54.7,13.2,54.1,12.9,53.5,12.9L53.5,12.9z"/>
+            <path class="st2" d="M53.5,77.1H45V62.9h4.1c0.8,0,1.5,0.5,1.7,1.2l4.3,10.5c0.2,0.6,0.2,1.3-0.2,1.8
+              C54.7,76.8,54.1,77.1,53.5,77.1L53.5,77.1z"/>
+            <path class="st3" d="M50.5,23.9c-0.4-0.4-0.8-0.6-1.3-0.6H45v43.4h4.1c0.5,0,1-0.2,1.3-0.6l5.9-5.9c0.4-0.4,0.6-0.8,0.6-1.3V31.1
+              c0-0.5-0.2-1-0.6-1.3L50.5,23.9L50.5,23.9z"/>
+          </g>
+          </svg></button>
+        <button class="btn crystal-btn" id="crystal2">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 90 90" style="enable-background:new 0 0 90 90;" xml:space="preserve">
+            <g>
+            <polygon class="st5" points="70,22.1 83.1,37.8 62.7,37.8 70,22.1 	"/>
+            <polygon class="st6" points="45,22.1 62.7,37.8 70,22.1 45,22.1 	"/>
+            <polygon class="st7" points="83.1,37.8 45,75.9 62.7,37.8 83.1,37.8 	"/>
+            <polygon class="st8" points="20,22.1 6.9,37.8 27.3,37.8 20,22.1 	"/>
+            <polygon class="st9" points="45,22.1 27.3,37.8 20,22.1 45,22.1 	"/>
+            <polygon class="st7" points="45,22.1 27.3,37.8 62.7,37.8 45,22.1 	"/>
+            <polygon class="st8" points="27.3,37.8 45,75.9 62.7,37.8 27.3,37.8 	"/>
+            <polygon class="st9" points="6.9,37.8 45,75.9 27.3,37.8 6.9,37.8 	"/>
+            <path class="st10" d="M71.6,30c-2.6-0.6-4.6-2.6-5.2-5.2c0-0.2-0.3-0.2-0.3,0c-0.6,2.6-2.6,4.6-5.2,5.2c-0.2,0-0.2,0.3,0,0.3
+              c2.6,0.6,4.6,2.6,5.2,5.2c0,0.2,0.3,0.2,0.3,0c0.6-2.6,2.6-4.6,5.2-5.2C71.8,30.3,71.8,30.1,71.6,30L71.6,30z"/>
+            <path class="st10" d="M65.6,39.5c-2-0.5-3.6-2.1-4.1-4.1c-0.1-0.2-0.3-0.2-0.4,0c-0.5,2-2.1,3.6-4.1,4.1c-0.2,0.1-0.2,0.3,0,0.4
+              c2,0.5,3.6,2.1,4.1,4.1c0.1,0.2,0.3,0.2,0.4,0c0.5-2,2.1-3.6,4.1-4.1C65.8,39.8,65.8,39.6,65.6,39.5L65.6,39.5z"/>
+            </g>
+          </svg>
+        </button>
+        <button class="btn crystal-btn" id="crystal3">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 90 90" style="enable-background:new 0 0 90 90;" xml:space="preserve">
+              <g>
+                  <path class="st11" d="M54.3,29V61l13.3,3.6c1.2-2.9,1.9-6.1,1.9-9.5V34.8c0-3.4-0.7-6.5-1.9-9.5L54.3,29L54.3,29z"/>
+                  <path class="st12" d="M57,31.7l10.6-6.3c-3.7-8.8-12.4-15-22.6-15l0,0l-2.7,14.4L57,31.7L57,31.7z"/>
+                  <path class="st12" d="M42.3,65.2L45,79.6l0,0c10.2,0,18.9-6.2,22.6-15L57,58.3L42.3,65.2L42.3,65.2z"/>
+                  <polygon class="st13" points="45,22.1 42.3,45 45,67.9 57,58.3 57,31.7 45,22.1 	"/>
+                  <polygon class="st14" points="30.3,29 30.3,61 45,67.9 45,22.1 30.3,29 	"/>
+                  <path class="st13" d="M33,58.3l-5.9-1.1l-4.7,7.3c3.7,8.8,12.4,15,22.6,15l0,0V67.9L33,58.3L33,58.3z"/>
+                  <path class="st13" d="M45,22.1V10.4l0,0c-10.2,0-18.9,6.2-22.6,15l3.4,8.3l7.1-2L45,22.1L45,22.1z"/>
+                  <path class="st12" d="M33,31.7l-10.6-6.3c-1.2,2.9-1.9,6.1-1.9,9.5v20.3c0,3.4,0.7,6.5,1.9,9.5L33,58.3V31.7L33,31.7z"/>
+              </g>
+              
+          </svg>
+        </button>
+        <button class="btn crystal-btn" id="crystal4">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 90 90" style="enable-background:new 0 0 90 90;" xml:space="preserve">
+            <g>
+              <polygon class="st15" points="45,12 16.4,28.5 16.4,61.5 45,78 73.6,61.5 73.6,28.5 45,12 	"/>
+              <polygon class="st16" points="45,45 45,12 16.4,28.5 45,45 	"/>
+              <polygon class="st15" points="45,45 45,45 45,45 	"/>
+              <polygon class="st17" points="16.4,28.5 16.4,61.5 45,45 16.4,28.5 	"/>
+              <polygon class="st16" points="73.6,28.5 73.6,28.5 45,45 45,45 73.6,61.5 73.6,61.5 73.6,28.5 	"/>
+              <polygon class="st18" points="45,45 16.4,61.5 45,78 45,45 	"/>
+              <polygon class="st17" points="45,78 73.6,61.5 45,45 45,78 	"/>
+              <polygon class="st15" points="61.1,54.3 61.1,35.7 45,26.4 28.9,35.7 28.9,54.3 45,63.6 61.1,54.3 	"/>
+              <polygon class="st19" points="61.1,54.3 61.1,35.7 45,26.4 45,63.6 61.1,54.3 	"/>
+            </g>
+        </svg>
+        </button>
+      </div>
+      
+    </div>
+
+
+      <script src="Assets/js/game.js"></script>
+  </body>
+
+  
+  
+
+
+  
+  
+
+</html>

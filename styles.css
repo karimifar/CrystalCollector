@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+}
+.box1{
+    fill: red;
+}
+body{}
+
+#svg{
+    width: 100%;
+}
+.btn{
+    width: 100px;
+}
+#wrapper{
+    width: 100%;
+    padding: 0 20%;
+}
+#buttons , #board, #controls{
+    float: left;
+    background:;
+}
+#controls , #buttons{
+    width: 20%;
+}
+#board{
+    width: 60%;
+}
+
+.crystal-btn{
+    color: white;
+    margin: 5px;
+}
+#box1{
+    background: rgb(75,117,158)
+}
+#box2{
+    background: rgb(114,193,86)
+}
+#box3{
+    background: rgb(223,79,55)
+}
+#box4{
+    background: rgb(247,181,56)
+}
+
+#start-btn{
+    background: green;
+    color: white;
+    margin-bottom: 25px;
+}
