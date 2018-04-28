@@ -41,16 +41,21 @@
   
   <body>
 
+      <div id="body-text"><p class="body-text">
+          Try to make up the target number by clicking on each gem below. If you go over the target number you will lose! The gems get random values on each game. <br>
+          <br><span id="start-text">Press start to play!</span>
+      </p>
+      </div>
+
 
     <div id="wrapper">
       <div id="controls">
         <div class="start">
-            <button class="btn start-btn" id="start-btn">Start</button>
+            <button class="btn start-btn btn-outline-dark" id="start-btn">Start</button>
         </div>
         <div id="stats">
-              <p>Score: <span id="wins"></span></p>
-              <p>Losses: <span id="losses"></span></p>
-
+              <p>Score: <span class="stat" id="wins"></span></p>
+              <p>Losses: <span class="stat" id="losses"></span></p>
         </div>
       </div>
 
@@ -154,7 +159,6 @@
       </div>
       
     </div>
-
 
       <script src="Assets/js/game.js"></script>
   </body>

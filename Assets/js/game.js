@@ -27,18 +27,21 @@ console.log(targetNo)
 //generate a random target number
 
 startBtn.on("click", function(){
+    userNoDiv.attr("class", "")
+    loseDiv.text(lossCount);
+    winDiv.text(winCount);
     targetNo = findRandom (40,35);
     $(".crystal-btn").prop("disabled", false);
     crystal1Val = findRandom(5,1)
     
     do{
-        crystal2Val = findRandom(20, 5);
+        crystal2Val = findRandom(16, 5);
     }while( crystal1Val==crystal2Val)
     do{
-        crystal3Val = findRandom(30, 1);
+        crystal3Val = findRandom(25, 1);
     }while( crystal1Val==crystal3Val || crystal2Val==crystal3Val)
     do{
-        crystal4Val = findRandom(20, 1);
+        crystal4Val = findRandom(15, 1);
     }while( crystal1Val==crystal4Val || crystal2Val==crystal4Val||crystal3Val==crystal4Val)
     
     crystal1.attr("value", crystal1Val);
@@ -70,12 +73,15 @@ function checkWin(){
         $(".crystal-btn").prop("disabled", true);
         startBtn.prop("disabled", false);
         reset();
+        userNoDiv.attr("class", "win-text")
     } else if (userNo>targetNo){
         lossCount ++;
         loseDiv.text(lossCount);
         $(".crystal-btn").prop("disabled", true);
         startBtn.prop("disabled", false);
         reset();
+        userNoDiv.attr("class", "lose-text")
+
     }
 }
 
